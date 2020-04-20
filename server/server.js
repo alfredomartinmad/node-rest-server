@@ -13,11 +13,10 @@ app.use(require('./routes/usuario'))
 
 
 
-mongoose.connect('mongodb://localhost:27017/cafe', (err, res) => {
+mongoose.connect(process.env.URLDB, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) throw err;
     console.log('Base de datos Online');
-})
-
+});
 
 app.listen(process.env.PORT, () => {
     console.log('Escuchando puerto ' + process.env.PORT);
