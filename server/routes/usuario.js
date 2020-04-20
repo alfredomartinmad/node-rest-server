@@ -57,9 +57,8 @@ app.post('/usuario', function(req, res) {
         role: body.role
     });
 
-    usuario.save((err, usuarioDB) => {
 
-        usuarioDB.password = null;
+    usuario.save((err, usuarioDB) => {
 
 
         if (err) {
