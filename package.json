@@ -1,7 +1,6 @@
 {
     "name": "07-restserver",
     "version": "1.0.0",
-    "engines": "11.6.0",
     "description": "",
     "main": "index.js",
     "scripts": {
