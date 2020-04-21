@@ -9,9 +9,9 @@ const mongoose = require('mongoose');
 // parse application/x-www-form-urlencoded && JSON
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-app.use(require('./routes/usuario'))
 
-
+//Configuración rutas
+app.use(require('./routes/index'));
 
 mongoose.connect(process.env.URLDB, { useCreateIndex: true, useNewUrlParser: true, useUnifiedTopology: true }, (err, res) => {
     if (err) throw err;
