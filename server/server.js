@@ -1,5 +1,5 @@
 require('./config/config');
-
+const path = require('path');
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
@@ -8,8 +8,8 @@ const mongoose = require('mongoose');
 
 // parse application/x-www-form-urlencoded && JSON
 app.use(bodyParser.urlencoded({ extended: false }))
-app.use(bodyParser.json())
-
+app.use(bodyParser.json());
+app.use(express.static(path.resolve(__dirname, '../server/public')));
 //Configuración rutas
 app.use(require('./routes/index'));
 
